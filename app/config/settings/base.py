@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-from datetime import timedelta
 import environ
 
 # 1. Rutas
