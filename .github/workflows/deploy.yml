@@ -1,0 +1,13 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Solo corre si los otros pasaron
+    steps:
+      - name: Deploy to Server
+        run: echo "Aquí irían los comandos para subir a tu servidor en AWS/DigitalOcean"

@@ -1,0 +1,3 @@
+-r base.txt
+flake8==7.0.0
+pytest  # Ya que estamos, para tus futuros tests
