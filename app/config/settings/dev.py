@@ -1,4 +1,4 @@
-from .base import env, BASE_DIR, SECRET_KEY
+from .base import env
 from datetime import timedelta
 
 DEBUG = True
