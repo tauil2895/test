@@ -6,12 +6,12 @@ jobs:
   flake8:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Run Lint
         run: pip install -r requirements/dev.txt
       - name: Run Lint
-        run: flake8 app/ # Solo revisa nuestra carpeta de código
+        run: flake8 app/ --count --select=E,F,W,C90 --max-line-length=119 --show-source --statistics
