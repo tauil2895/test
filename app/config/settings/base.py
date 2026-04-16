@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-from datetime import timedelta
 import environ
 
 # 1. Rutas
@@ -31,7 +30,7 @@ THIRD_PARTY_APPS = [
     'drf_spectacular',
 ]
 
-LOCAL_APPS = [] # Aquí irán tus módulos como 'modules.patients'
+LOCAL_APPS = []  # Aquí irán tus módulos como 'modules.patients'
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -39,12 +38,12 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django_prometheus.middleware.PrometheusBeforeMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware', # Requerido por Admin
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Requerido por Admin
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware', # Requerido por Admin
-    'django.contrib.messages.middleware.MessageMiddleware', # Requerido por Admin
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Requerido por Admin
+    'django.contrib.messages.middleware.MessageMiddleware',  # Requerido por Admin
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_prometheus.middleware.PrometheusAfterMiddleware',
 ]
