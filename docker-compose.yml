@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=app_db
+      - POSTGRES_USER=app_user
+      - POSTGRES_PASSWORD=password123 # En producción usa .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d app_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/django/Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://app_user:password123@db:5432/app_db
+      - SECRET_KEY=charleston_secure_key_2026
+      - DJANGO_SETTINGS_MODULE=config.settings.dev
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

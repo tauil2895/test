@@ -1,0 +1,9 @@
+# backend/requirements/base.txt
+Django>=4.2,<5.0
+djangorestframework # API developer
+djangorestframework-simplejwt # Swagger API Docs
+django-cors-headers # Allow request from frontend
+django-prometheus # API monitoring
+drf-spectacular # Swagger documentation
+django-environ  # Manage environment variables
+psycopg2-binary # PostgreSQL connection
