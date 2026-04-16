@@ -1,5 +1,5 @@
 from .base import *
-from datetime import timedelta
+from .base import env, timedelta
 
 DEBUG = True
 

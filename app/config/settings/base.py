@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
+from datetime import timedelta
 import environ
-from config.env import env
 
 # 1. Rutas
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
