@@ -2,6 +2,7 @@
 import os
 import sys
 
+
 def main():
     # CAMBIO IMPORTANTE: Apuntar a la nueva ruta de settings
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.dev')
@@ -16,5 +17,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-        

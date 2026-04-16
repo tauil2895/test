@@ -1,4 +1,4 @@
-from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, TEMPLATES, env
+from .base import *
 from datetime import timedelta
 
 DEBUG = True
